@@ -1,0 +1,30 @@
+﻿namespace AdventOfCode.Solutions.Day[Day];
+
+public class Day[Day]Tests
+{
+    private readonly Day[Day]Solver _solver = new();
+    [Test] public async Task Step1WithExample() => await _solver.ExecuteExample1("??");
+    [Test] public async Task Step2WithExample() => await _solver.ExecuteExample2("??");
+    [Test] public void Step1WithPuzzleInput() => TestContext.Current?.OutputWriter.WriteLine(_solver.ExecutePuzzle1());
+    [Test] public void Step2WithPuzzleInput() => TestContext.Current?.OutputWriter.WriteLine(_solver.ExecutePuzzle2());
+}
+
+public class Day[Day]Solver : SolverBase
+{
+    // List<??> _data;
+
+    protected override void Parse(List<string> data)
+    {
+        // _data = new();
+    }
+
+    protected override object Solve1()
+    {
+        throw new Exception("Solver error");
+    }
+
+    protected override object Solve2()
+    {
+        throw new Exception("Solver error");
+    }
+}

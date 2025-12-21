@@ -1,0 +1,7 @@
+﻿[*.cs]
+# Forces attribute and declaration on the same line for methods
+resharper_csharp_place_method_attribute_on_same_line = true
+
+# General setting for placing attributes on the same line as their declaration
+# This is a broader setting that may affect methods, fields, and properties.
+resharper_place_attribute_on_same_line = true
