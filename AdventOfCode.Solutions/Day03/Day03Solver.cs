@@ -21,6 +21,11 @@ public class Day03Solver : SolverBase
         _data = string.Join("", data);
     }
 
+    /// <summary>
+    /// Regex checks for matches of "mul(#,#)", where # can be any three digit number, in a string of "corrupted" data. The two numbers in each 
+    /// valid match are multiplied with each other and added to a running total.
+    /// </summary>
+    /// <returns></returns>
     protected override object Solve1()
     {
         int sum = 0;
@@ -33,6 +38,12 @@ public class Day03Solver : SolverBase
         return sum;
     }
 
+    /// <summary>
+    /// Regex checks for matches of "mul(#,#)", where # can be any three digit number, in a string of "corrupted" data, however ONLY when such 
+    /// string is preceded by a do() function. At which point, the two numbers in each valid match are multiplied with each other and added to 
+    /// a running total. The calculation is suspended upon each instance of a don't() function, awaiting the next do() function to begin again.
+    /// </summary>
+    /// <returns></returns>
     protected override object Solve2()
     {
         bool doEnabled = true;

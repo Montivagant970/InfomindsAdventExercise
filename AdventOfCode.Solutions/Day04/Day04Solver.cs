@@ -18,6 +18,10 @@ public class Day04Solver : SolverBase
         _data = data.Select(line => line.ToCharArray()).ToList();
     }
 
+    /// <summary>
+    /// Counts instances of the target string "XMAS" in any direction (horizontals, verticals, diagonals) in the given word puzzle.
+    /// </summary>
+    /// <returns></returns>
     protected override object Solve1()
     {
         const string target = "XMAS";
@@ -75,6 +79,11 @@ public class Day04Solver : SolverBase
         return true;
     }
 
+    /// <summary>
+    /// Checks for an X pattern of the string "MAS" on each of the two diagonals. If both diagonals spell out "MAS," the solution instance 
+    /// is added to a running total.
+    /// </summary>
+    /// <returns></returns>
     protected override object Solve2()
     {
         int sum = 0;

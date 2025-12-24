@@ -24,6 +24,11 @@ public class Day02Solver : SolverBase
                     ).ToList();
     }
 
+    /// <summary>
+    /// Tests each report (line) for safety given the two critera: (1) that the numbers within the report are either all increasing or all 
+    /// decreasing and (2) that the distance between each number must be at least one and at most three. 
+    /// </summary>
+    /// <returns></returns>
     protected override object Solve1()
     {
         int sum = 0;
@@ -41,6 +46,14 @@ public class Day02Solver : SolverBase
         return  sum;
     }
 
+    /// <summary>
+    /// Tests each report for safety with the caveat that one violation of the necessary criteria can be overlooked and the report can still be 
+    /// considered valid. The necessary critera remain the following: (1) that the numbers within the report are either all increasing or all 
+    /// decreasing and (2) that the distance between each number must be at least one and at most three. The method tests problematic reports 
+    /// (i.e. those which violate the criteria) by dropping one number at a time and retesting the report without it. If it still cannot pass, 
+    /// it is considered unsafe.  
+    /// </summary>
+    /// <returns></returns>
     protected override object Solve2()
     {
         int sum = 0;

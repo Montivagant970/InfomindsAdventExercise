@@ -21,7 +21,12 @@ public class Day01Solver : SolverBase
             return (Left: int.Parse(sides[0]), Right: int.Parse(sides[1]));
         }).ToList();
     }
-
+    
+    /// <summary>
+    /// Orders the two lists of numbers from the smallest to largest value, calculates the distance between the two numbers of the same line, and adds 
+    /// their distance to a running total.
+    /// </summary>
+    /// <returns></returns>
     protected override object Solve1()
     {
         var (leftListNumbers, rightListNumbers) = SplitAndOrderData(_data);
@@ -35,6 +40,11 @@ public class Day01Solver : SolverBase
         return sum;
     }
 
+    /// <summary>
+    /// Multiplies the numbers in the left list by the times that they occur in the right list, adding the result to a running total. This is achieved
+    /// through a dictionary which holds a count of the instances of each unique number in its list. 
+    /// </summary>
+    /// <returns></returns>
     protected override object Solve2()
     {
         var (leftListNumbers, rightListNumbers) = SplitAndOrderData(_data);
@@ -68,6 +78,7 @@ public class Day01Solver : SolverBase
     {
         var leftListNumbers = _data.Select(p => p.Left).OrderBy(x => x).ToList();
         var rightListNumbers = _data.Select(p => p.Right).OrderBy(x => x).ToList();
+
         return (leftListNumbers, rightListNumbers);
     }
 }
