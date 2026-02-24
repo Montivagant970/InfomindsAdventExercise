@@ -34,10 +34,10 @@ public class Day05Solver : SolverBase
             }
         }
 
-        unacceptableNumbers = loadUnacceptableOrderingReference();
+        unacceptableNumbers = LoadUnacceptableOrderingReference();
     }
 
-    private Dictionary<int, List<int>> loadUnacceptableOrderingReference()
+    private Dictionary<int, List<int>> LoadUnacceptableOrderingReference()
     {
         Dictionary<int, List<int>> unacceptableNumbers = new Dictionary<int, List<int>>();
 
@@ -66,13 +66,13 @@ public class Day05Solver : SolverBase
 
         foreach (int[] pageSet in pageUpdates)
         {
-            if (isCorrectlyOrdered(pageSet))
+            if (IsCorrectlyOrdered(pageSet))
             {
                 correctlyOrderedPageSets.Add(pageSet);
             }
         }
 
-        int middleIndexSum = addMiddleIndices(correctlyOrderedPageSets);
+        int middleIndexSum = AddMiddleIndices(correctlyOrderedPageSets);
         
         return middleIndexSum;
     }
@@ -89,19 +89,19 @@ public class Day05Solver : SolverBase
 
         foreach (int[] pageSet in pageUpdates)
         {
-            if (!isCorrectlyOrdered(pageSet))
+            if (!IsCorrectlyOrdered(pageSet))
             {
-                correctSetOrdering(pageSet);
+                CorrectSetOrdering(pageSet);
                 correctedPageSets.Add(pageSet);
             }
         }
         
-        int middleIndexSum = addMiddleIndices(correctedPageSets);
+        int middleIndexSum = AddMiddleIndices(correctedPageSets);
         
         return middleIndexSum;
     }
 
-    private bool isCorrectlyOrdered(int[] _pageSet)
+    private bool IsCorrectlyOrdered(int[] _pageSet)
     {
         for (int currentPagePosition = _pageSet.Length - 1; currentPagePosition > 0; currentPagePosition--)
         {                
@@ -122,7 +122,7 @@ public class Day05Solver : SolverBase
         return true;
     }
 
-    private int addMiddleIndices(List<int[]> _pageUpdates)
+    private int AddMiddleIndices(List<int[]> _pageUpdates)
     {
         int middleIndexSum = 0; 
 
@@ -136,7 +136,7 @@ public class Day05Solver : SolverBase
         return middleIndexSum;
     }
     
-    private void correctSetOrdering(int[] _pageSet)
+    private void CorrectSetOrdering(int[] _pageSet)
     {
         for (int currentPagePosition = _pageSet.Length - 1; currentPagePosition > 0; currentPagePosition--)
         {                
